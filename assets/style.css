@@ -1377,3 +1377,87 @@ body.film-open { overflow: hidden; }
   .film-card:hover .film-sheen { animation: none; }
   .film-modal, .film-box { transition: none; }
 }
+
+/* ============================ 引用的项目 ============================ */
+.ref-card {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(20px, 3vw, 46px);
+  align-items: center;
+  margin-top: clamp(28px, 4vw, 46px);
+  padding: clamp(14px, 1.8vw, 22px);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--r) + 6px);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.058), rgba(255, 255, 255, 0.018));
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.55s var(--ease), border-color 0.4s ease, box-shadow 0.55s var(--ease);
+}
+.ref-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--line-strong);
+  box-shadow: 0 44px 96px -54px rgba(0, 0, 0, 0.95);
+}
+.ref-shot {
+  position: relative;
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0b0f13;
+}
+.ref-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.008);
+  transition: transform 0.9s var(--ease);
+}
+.ref-card:hover .ref-shot img { transform: scale(1.035); }
+.ref-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 100% at 50% 0, rgba(90, 220, 150, 0.1), transparent 62%);
+}
+.ref-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 clamp(4px, 1vw, 18px);
+}
+.ref-badge {
+  align-self: flex-start;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: #8be8ad;
+  background: rgba(90, 220, 150, 0.1);
+  border: 1px solid rgba(90, 220, 150, 0.22);
+  padding: 5px 11px;
+  border-radius: 999px;
+}
+.ref-info b {
+  font-size: clamp(21px, 2.3vw, 29px);
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+.ref-desc {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.95;
+}
+.ref-link {
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--accent-2);
+  letter-spacing: 0.01em;
+  word-break: break-all;
+}
+
+@media (max-width: 860px) {
+  .ref-card { grid-template-columns: 1fr; }
+  .ref-info { padding: 4px 6px 8px; }
+}
