@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cube Launcher — 轻量、干净的 Minecraft 启动器</title>
+<meta name="description" content="Cube Launcher 是一款为 Windows 打造的 Minecraft 启动器：正版登录开箱可用、多实例管理、Forge / Fabric、陶瓦与红石联机、视频背景与主题定制，开源且不捆绑。" />
+<meta name="theme-color" content="#06080f" />
+<meta property="og:title" content="Cube Launcher" />
+<meta property="og:description" content="轻量、干净、开箱即用的 Minecraft 启动器。正版登录可用，多实例管理，陶瓦与红石联机。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+<script>document.documentElement.classList.add("js");</script>
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top" aria-label="Cube Launcher 首页">
+      <img src="assets/icon.svg" alt="" width="30" height="30" />
+      <span class="brand-text">Cube Launcher</span>
+      <span class="brand-tag">1.2.0</span>
+    </a>
+
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">功能</a>
+      <a href="#screens">界面</a>
+      <a href="#film">宣传片</a>
+      <a href="#download">下载</a>
+      <a href="#changelog">更新日志</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="ghost-btn" href="https://github.com/cn0323/Cube-launcher" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a class="primary-btn small" href="#download">下载</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="aurora" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+    </div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <div class="eyebrow reveal" style="--i:0">
+          <span class="dot"></span> Windows 10 / 11 · 开源 · GPL-3.0
+        </div>
+
+        <h1 class="reveal" style="--i:1">
+          轻一点，快一点<br />
+          <span class="grad">干净得能看见底</span>
+        </h1>
+
+        <p class="lede reveal" style="--i:2">
+          Cube Launcher 是一个为 Minecraft 打造的启动器：正版登录开箱可用，
+          多实例、Forge / Fabric、陶瓦与红石联机都在一处。
+          不捆绑、不弹广告，源码公开。
+        </p>
+
+        <div class="cta-row reveal" style="--i:3">
+          <a class="primary-btn" id="heroDownload" href="#download">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg>
+            下载 1.2.0
+          </a>
+          <a class="ghost-btn large" href="https://github.com/cn0323/Cube-launcher" target="_blank" rel="noopener">
+            查看源码
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+
+        <ul class="meta-row reveal" style="--i:4">
+          <li><b data-count="20.3">0</b> MB 单文件</li>
+          <li class="sep"></li>
+          <li><b data-count="5">0</b> 种语言</li>
+          <li class="sep"></li>
+          <li><b>0</b> 捆绑与广告</li>
+        </ul>
+      </div>
+
+      <!-- 真实界面截图 -->
+      <div class="hero-visual reveal" style="--i:2">
+        <div class="shot-frame" id="tilt">
+          <img class="shot-img" src="assets/screens/home-video.webp" width="1440" height="861"
+               alt="Cube Launcher 主界面：视频背景上的启动按钮、账号与版本卡片" />
+          <div class="float-chip chip-a"><span class="chip-dot"></span> 视频背景 · 音量可调</div>
+          <div class="float-chip chip-b"><b>1.2.0</b> 已发布</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>视频背景</span><span>·</span><span>资源中心</span><span>·</span><span>Forge</span><span>·</span><span>Fabric</span><span>·</span>
+      <span>陶瓦联机</span><span>·</span><span>红石联机</span><span>·</span><span>多实例</span><span>·</span><span>一键更新</span><span>·</span>
+      <span>皮肤 3D</span><span>·</span><span>主题定制</span><span>·</span>
+      <span>视频背景</span><span>·</span><span>资源中心</span><span>·</span><span>Forge</span><span>·</span><span>Fabric</span><span>·</span>
+      <span>陶瓦联机</span><span>·</span><span>红石联机</span><span>·</span><span>多实例</span><span>·</span><span>一键更新</span><span>·</span>
+      <span>皮肤 3D</span><span>·</span><span>主题定制</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section" id="features">
+    <div class="section-head">
+      <span class="kicker reveal">功能</span>
+      <h2 class="reveal" style="--i:1">该有的都有，多余的没有</h2>
+      <p class="section-sub reveal" style="--i:2">
+        每一样都为了少点两下鼠标。装好、选版本、进游戏。
+      </p>
+    </div>
+
+    <div class="bento">
+      <article class="card reveal" style="--i:0" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M9 5h6v4H9zM4 15h6v4H4zM14 15h6v4h-6z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" d="M12 9v3M7 15v-3h10v3"/></svg>
+        </div>
+        <h3>首页卡片随手排</h3>
+        <p>长按账号、启动、版本任意一张卡片，拖到想要的位置；松手落位，顺序记进设置里。</p>
+      </article>
+
+      <article class="card reveal" style="--i:1" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3 3.5 7.5 12 12l8.5-4.5L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3.5 12 12 16.5 20.5 12M3.5 16.5 12 21l8.5-4.5"/></svg>
+        </div>
+        <h3>多实例互不打架</h3>
+        <p>生存、创造、整合包各自独立目录，Forge 与 Fabric 版本并存，改坏一个不影响另一个。</p>
+      </article>
+
+      <article class="card reveal" style="--i:2" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M8 12a4 4 0 0 1 4-4h4a4 4 0 0 1 0 8h-1"/><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 0 1-4 4H8a4 4 0 0 1 0-8h1"/></svg>
+        </div>
+        <h3>陶瓦与红石，两条联机通道</h3>
+        <p>联机页拆成两栏：陶瓦联机分创建与加入，红石联机直连第三方中继。切换只要一下。</p>
+        <div class="mini-split" aria-hidden="true">
+          <span class="ms-tab active">陶瓦联机</span>
+          <span class="ms-tab">红石联机</span>
+          <span class="ms-body"></span>
+        </div>
+      </article>
+
+      <article class="card reveal" style="--i:3" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></svg>
+        </div>
+        <h3>一键更新</h3>
+        <p>直接读仓库的 Releases，比对版本后下载、校验 sha256、替换程序并重启，全程不用离开启动器。</p>
+      </article>
+
+      <article class="card reveal" style="--i:4" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.7"/><ellipse cx="12" cy="12" rx="3.6" ry="8.2" fill="none" stroke="currentColor" stroke-width="1.5"/><path fill="none" stroke="currentColor" stroke-width="1.5" d="M4.2 9.4h15.6M4.2 14.6h15.6"/></svg>
+        </div>
+        <h3>五种语言</h3>
+        <p>简体中文、繁體中文、English、日本語，跟随系统或手动指定，切换即时生效。</p>
+      </article>
+
+      <article class="card reveal" style="--i:5" data-sheen>
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3v3M12 18v3M4.2 7.5l2.6 1.5M17.2 15l2.6 1.5M4.2 16.5l2.6-1.5M17.2 9l2.6-1.5"/><circle cx="12" cy="12" r="3.4" fill="none" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <h3>主题与强调色</h3>
+        <p>黑白主题在主界面直接切，强调色可自定义，连视频背景的音量都能单独调。</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= SCREENS ================= -->
+  <section class="section screens-section" id="screens">
+    <div class="section-head">
+      <span class="kicker reveal">界面</span>
+      <h2 class="reveal" style="--i:1">每一页都干净得能直接用</h2>
+      <p class="section-sub reveal" style="--i:2">
+        下面全是真机截图，没有一张是效果图。点缩略图就能切换。
+      </p>
+    </div>
+
+    <div class="screens-stage reveal" style="--i:1">
+      <div class="stage-frame">
+        <img class="stage-img on" src="assets/screens/home-video.webp" width="1440" height="861"
+             alt="主页：视频背景上显示启动按钮与账号" />
+        <img class="stage-img" alt="" aria-hidden="true" />
+        <span class="stage-shine" aria-hidden="true"></span>
+      </div>
+      <div class="stage-meta">
+        <span class="stage-name" id="stageName">主页 · 视频背景</span>
+        <span class="stage-count"><b id="stageIndex">1</b> / 8</span>
+      </div>
+    </div>
+
+    <div class="shot-tabs reveal" style="--i:2" role="tablist" aria-label="界面截图">
+        <button class="shot-tab active" type="button" role="tab"
+                aria-selected="true" data-src="assets/screens/home-video.webp"
+                data-label="主页 · 视频背景">
+          <span class="tab-thumb"><img src="assets/screens/home-video.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">视频背景</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/home.webp"
+                data-label="主页 · 纯色底">
+          <span class="tab-thumb"><img src="assets/screens/home.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">主页</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/account.webp"
+                data-label="账户">
+          <span class="tab-thumb"><img src="assets/screens/account.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">账户</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/multiplayer.webp"
+                data-label="联机">
+          <span class="tab-thumb"><img src="assets/screens/multiplayer.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">联机</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/versions.webp"
+                data-label="游戏设置">
+          <span class="tab-thumb"><img src="assets/screens/versions.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">游戏设置</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/downloads.webp"
+                data-label="游戏下载">
+          <span class="tab-thumb"><img src="assets/screens/downloads.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">游戏下载</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/mods.webp"
+                data-label="资源中心">
+          <span class="tab-thumb"><img src="assets/screens/mods.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">资源中心</span>
+        </button>
+        <button class="shot-tab" type="button" role="tab"
+                aria-selected="false" data-src="assets/screens/settings.webp"
+                data-label="全局设置">
+          <span class="tab-thumb"><img src="assets/screens/settings.webp" alt="" loading="lazy" width="1440" height="861" /></span>
+          <span class="tab-name">全局设置</span>
+        </button>
+    </div>
+  </section>
+
+  <!-- ================= FILM ================= -->
+  <section class="section film-section" id="film">
+    <div class="section-head">
+      <span class="kicker reveal">宣传片</span>
+      <h2 class="reveal" style="--i:1">30 秒，先看它长什么样</h2>
+      <p class="section-sub reveal" style="--i:2">
+        全片白色主题，素材全是真机截图，没有一帧是渲染图。点开即播，默认静音。
+      </p>
+    </div>
+
+    <button class="film-card reveal" style="--i:1" type="button" id="filmPlay" aria-label="播放宣传片">
+      <img src="assets/promo-poster.jpg" width="1920" height="1080" alt="Cube Launcher 宣传片封面" loading="lazy" />
+      <span class="film-vignette" aria-hidden="true"></span>
+      <span class="play-orb" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M8 5.1v13.8L19.4 12z"/></svg>
+      </span>
+      <span class="film-meta"><b>Cube Launcher 1.2.0</b> · 1920×1080 · 0:30</span>
+      <span class="film-sheen" aria-hidden="true"></span>
+    </button>
+  </section>
+
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="section" id="download">
+    <div class="section-head">
+      <span class="kicker reveal">下载</span>
+      <h2 class="reveal" style="--i:1">选一个拿走</h2>
+      <p class="section-sub reveal" style="--i:2">
+        当前版本 <b class="accent">1.2.0</b>，发布于 <span id="releaseDate">2026-11-07</span>。
+        全部从 GitHub Releases 直连，浏览器可能提示下载风险，请自行确认后保留。
+      </p>
+    </div>
+
+    <div class="dl-grid">
+      <a class="dl-card primary reveal" style="--i:0"
+         href="https://github.com/cn0323/Cube-launcher/releases/latest/download/CubeLauncher_x64.exe"
+         data-sheen>
+        <div class="dl-top">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M12 3.8v9.4m0 0 3.6-3.6M12 13.2 8.4 9.6M4.5 16.2v1.6a2.2 2.2 0 0 0 2.2 2.2h10.6a2.2 2.2 0 0 0 2.2-2.2v-1.6"/></svg>
+          </span>
+          <span class="dl-badge">推荐</span>
+        </div>
+        <h3>单文件版</h3>
+        <p class="dl-desc">一个 exe，双击就跑。需要预先安装 .NET 8 桌面运行时。</p>
+        <div class="dl-meta"><span>20.3 MB</span><span>x64</span><span>框架依赖</span></div>
+        <span class="dl-go">下载 .exe
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+        </span>
+      </a>
+
+      <a class="dl-card reveal" style="--i:1"
+         href="https://github.com/cn0323/Cube-launcher/releases/latest/download/CubeLauncher-1.2.0-source.zip"
+         data-sheen>
+        <div class="dl-top">
+          <span class="dl-ico">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="m9 8-4 4 4 4m6-8 4 4-4 4"/></svg>
+          </span>
+        </div>
+        <h3>源码</h3>
+        <p class="dl-desc">完整 .NET 8 / WPF 工程，遵循 GPL-3.0，可自行编译。</p>
+        <div class="dl-meta"><span>5.2 MB</span><span>GPL-3.0</span></div>
+        <span class="dl-go">下载源码
+          <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="dl-notes reveal" style="--i:3">
+      <div class="note">
+        <span class="note-k">运行环境</span>
+        <p>Windows 10 1809 及以上 / Windows 11，x64。<b>框架依赖</b>版需先装
+          <a href="https://dotnet.microsoft.com/download/dotnet/8.0" target="_blank" rel="noopener">.NET 8 Desktop Runtime</a>。</p>
+      </div>
+      <div class="note">
+        <span class="note-k">备用下载</span>
+        <p>GitHub 访问不畅时，可用
+          <a href="https://gitee.com/cn0323/Cube-launcher" target="_blank" rel="noopener">Gitee 镜像</a>
+          或直接到 <a href="https://github.com/cn0323/Cube-launcher/releases" target="_blank" rel="noopener">Releases 页面</a> 手动挑文件。</p>
+      </div>
+      <div class="note">
+        <span class="note-k">联机服务</span>
+        <p>红石联机由第三方提供，见
+          <a href="https://hongshi.site/" target="_blank" rel="noopener">hongshi.site</a>，
+          与本启动器无隶属关系。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHANGELOG ================= -->
+  <section class="section" id="changelog">
+    <div class="section-head">
+      <span class="kicker reveal">更新日志</span>
+      <h2 class="reveal" style="--i:1">每一版改了什么</h2>
+      <p class="section-sub reveal" style="--i:2">以下内容直接读取仓库 Releases，和启动器里看到的完全一致。</p>
+    </div>
+
+    <div class="log-list" id="logList" aria-live="polite">
+      <div class="log-skeleton reveal" style="--i:0">
+        <div class="sk-line w30"></div>
+        <div class="sk-line w80"></div>
+        <div class="sk-line w60"></div>
+      </div>
+    </div>
+
+    <div class="log-more reveal">
+      <a class="ghost-btn large" href="https://github.com/cn0323/Cube-launcher/releases" target="_blank" rel="noopener">
+        在 GitHub 查看全部
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="final-cta">
+    <div class="fc-glow" aria-hidden="true"></div>
+    <h2 class="reveal">装好，选个版本，进游戏。</h2>
+    <p class="reveal" style="--i:1">20.3 MB，没有安装向导，没有捆绑。</p>
+    <div class="cta-row center reveal" style="--i:2">
+      <a class="primary-btn" href="https://github.com/cn0323/Cube-launcher/releases/latest/download/CubeLauncher_x64.exe">下载 1.2.0</a>
+      <a class="ghost-btn large" href="https://github.com/cn0323/Cube-launcher" target="_blank" rel="noopener">GitHub 仓库</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="f-brand">
+      <img src="assets/icon.svg" alt="" width="26" height="26" />
+      <div>
+        <strong>Cube Launcher</strong>
+        <span>由重念打造 · © 2026</span>
+      </div>
+    </div>
+
+    <nav class="f-links" aria-label="页脚导航">
+      <div>
+        <span class="f-k">产品</span>
+        <a href="#features">功能</a>
+        <a href="#film">宣传片</a>
+        <a href="#download">下载</a>
+        <a href="#changelog">更新日志</a>
+      </div>
+      <div>
+        <span class="f-k">项目</span>
+        <a href="https://github.com/cn0323/Cube-launcher" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/cn0323/Cube-launcher/issues/new?labels=bug" target="_blank" rel="noopener">反馈问题</a>
+        <a href="https://github.com/cn0323/Cube-launcher/blob/HEAD/LICENSE" target="_blank" rel="noopener">GPL-3.0</a>
+      </div>
+      <div>
+        <span class="f-k">声明</span>
+        <a href="https://github.com/cn0323/Cube-launcher/blob/main/Cube%20launcher%E7%89%88%E6%9D%83%E5%A3%B0%E6%98%8E.txt" target="_blank" rel="noopener">版权声明</a>
+        <a href="https://github.com/cn0323/Cube-launcher/blob/main/Cube%20Launcher%20%E8%BD%AF%E4%BB%B6%E5%A3%B0%E6%98%8E.txt" target="_blank" rel="noopener">软件声明</a>
+        <a href="https://hongshi.site/" target="_blank" rel="noopener">红石联机</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <p>本项目为第三方开源启动器，与 Mojang Studios、Microsoft 无隶属关系。Minecraft 是 Mojang Studios 的商标。</p>
+  </div>
+</footer>
+
+<div class="film-modal" id="filmModal" aria-hidden="true">
+  <div class="film-backdrop" data-close></div>
+  <div class="film-box" role="dialog" aria-modal="true" aria-label="Cube Launcher 宣传片">
+    <button class="film-close" type="button" data-close aria-label="关闭">
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <video id="filmVideo" data-src="assets/promo.mp4" poster="assets/promo-poster.jpg"
+           controls playsinline preload="none" width="1920" height="1080"></video>
+  </div>
+</div>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>

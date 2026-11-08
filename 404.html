@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>页面不存在 · Cube Launcher</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+<style>
+  :root {
+    --bg: #05070e;
+    --text: #eef2f9;
+    --muted: #94a2b8;
+    --line: rgba(255, 255, 255, 0.085);
+    --accent: #0891fe;
+    --accent-2: #5cc8ff;
+    --font: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+            "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { color-scheme: dark; }
+  body {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+      radial-gradient(80% 60% at 50% 0%, rgba(8, 145, 254, 0.16), transparent 70%),
+      radial-gradient(60% 50% at 80% 100%, rgba(124, 92, 255, 0.12), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+  }
+  .box { max-width: 520px; }
+  .code {
+    font-size: clamp(96px, 24vw, 168px);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    background: linear-gradient(180deg, #fff, rgba(92, 200, 255, 0.42));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  h1 { margin-top: 18px; font-size: clamp(20px, 4.4vw, 26px); font-weight: 700; letter-spacing: 0.01em; }
+  p { margin-top: 14px; font-size: 15px; line-height: 1.9; color: var(--muted); }
+  .actions { margin-top: 34px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  a {
+    display: inline-flex; align-items: center; justify-content: center;
+    height: 46px; padding: 0 26px; border-radius: 999px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, border-color 0.25s ease;
+  }
+  .primary { background: linear-gradient(180deg, #2f9bff, #0a7de0); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+  .primary:hover { transform: translateY(-2px); }
+  .ghost { color: var(--text); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); }
+  .ghost:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.18); background: rgba(255, 255, 255, 0.07); }
+  .foot { margin-top: 40px; font-size: 12px; letter-spacing: 0.22em; color: #5d6a7d; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <div class="code">404</div>
+    <h1>这个页面不存在</h1>
+    <p>链接可能已经失效，或者地址打错了。<br />回首页看看，那里有界面预览、宣传片和下载。</p>
+    <div class="actions">
+      <a class="primary" href="/">回到首页</a>
+      <a class="ghost" href="https://github.com/cn0323/Cube-launcher/releases/latest">下载最新版</a>
+    </div>
+    <div class="foot">CUBE LAUNCHER</div>
+  </div>
+</body>
+</html>
