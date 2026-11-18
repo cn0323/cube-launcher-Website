@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Cube Launcher — 轻量、干净的 Minecraft 启动器</title>
 <meta name="description" content="Cube Launcher 是一款为 Windows 打造的 Minecraft 启动器：正版登录开箱可用、多实例管理、Forge / Fabric、陶瓦与红石联机，内置 AI 助手 Cubi 可以问任何问题，开源且不捆绑。" />
-<meta name="theme-color" content="#06080f" />
+<meta name="theme-color" content="#f7f8fb" />
 <meta property="og:title" content="Cube Launcher" />
 <meta property="og:description" content="轻量、干净、开箱即用的 Minecraft 启动器。正版登录可用，多实例管理，陶瓦与红石联机，内置 AI 助手 Cubi。" />
 <meta property="og:type" content="website" />
@@ -32,6 +32,7 @@
       <a href="#features">功能</a>
       <a href="#ai">AI 助手</a>
       <a href="#screens">界面</a>
+      <a href="#theme">主题</a>
       <a href="#film">宣传片</a>
       <a href="#download">下载</a>
       <a href="#changelog">更新日志</a>
@@ -88,7 +89,7 @@
         </div>
 
         <ul class="meta-row reveal" style="--i:4">
-          <li><b data-count="20.3">0</b> MB 单文件</li>
+          <li><b data-count="20.2">0</b> MB 单文件</li>
           <li class="sep"></li>
           <li><b data-count="5">0</b> 种语言</li>
           <li class="sep"></li>
@@ -261,6 +262,45 @@
     </div>
   </section>
 
+  <!-- ================= 深浅主题对比 ================= -->
+  <section class="section theme-section" id="theme">
+    <div class="section-head">
+      <span class="kicker reveal">主题</span>
+      <h2 class="reveal" style="--i:1">白色和深色，是同一个界面</h2>
+      <p class="section-sub reveal" style="--i:2">
+        中间那条滑杆可以拖。左边是白色主题，右边是深色主题，切换在启动器主界面就能完成，不用重启。
+      </p>
+    </div>
+
+    <div class="ba reveal" style="--i:1">
+      <img class="ba-img" src="assets/screens/home-video.webp" width="1440" height="861"
+           alt="深色主题：视频背景与玻璃面板" />
+      <img class="ba-img ba-light" src="assets/screens/theme-light.webp" width="1440" height="861"
+           alt="白色主题：浅色背景与同一个启动按钮" />
+      <div class="ba-divider" aria-hidden="true">
+        <span class="ba-knob">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 8 5.5 12l4 4M14.5 8l4 4-4 4"/>
+          </svg>
+        </span>
+      </div>
+      <input class="ba-range" type="range" min="0" max="100" step="0.1" value="62"
+             aria-label="拖动对比白色主题与深色主题" />
+    </div>
+
+    <div class="ba-meta">
+      <span><i class="sw light"></i>白色主题</span>
+      <span><i class="sw dark"></i>深色主题</span>
+    </div>
+
+    <p class="ba-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 12h8M8 12l3-3M8 12l3 3M16 12l-3-3M16 12l-3 3"/>
+      </svg>
+      按住滑杆左右拖，也可以点图片任意位置跳过去
+    </p>
+  </section>
+
   <!-- ================= SCREENS ================= -->
   <section class="section screens-section" id="screens">
     <div class="section-head">
@@ -415,7 +455,7 @@
         </div>
         <h3>单文件版</h3>
         <p class="dl-desc">一个 exe，双击就跑。需要预先安装 .NET 8 桌面运行时。</p>
-        <div class="dl-meta"><span>20.3 MB</span><span>x64</span><span>框架依赖</span></div>
+        <div class="dl-meta"><span>20.2 MB</span><span>x64</span><span>框架依赖</span></div>
         <span class="dl-go">下载 .exe
           <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
         </span>
@@ -431,7 +471,7 @@
         </div>
         <h3>源码</h3>
         <p class="dl-desc">完整 .NET 8 / WPF 工程，遵循 GPL-3.0，可自行编译。</p>
-        <div class="dl-meta"><span>5.7 MB</span><span>GPL-3.0</span></div>
+        <div class="dl-meta"><span>5.8 MB</span><span>GPL-3.0</span></div>
         <span class="dl-go">下载源码
           <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
         </span>
@@ -487,7 +527,7 @@
   <section class="final-cta">
     <div class="fc-glow" aria-hidden="true"></div>
     <h2 class="reveal">装好，选个版本，进游戏。</h2>
-    <p class="reveal" style="--i:1">20.3 MB，没有安装向导，没有捆绑。</p>
+    <p class="reveal" style="--i:1">20.2 MB，没有安装向导，没有捆绑。</p>
     <div class="cta-row center reveal" style="--i:2">
       <a class="primary-btn" href="https://github.com/cn0323/Cube-launcher/releases/latest/download/CubeLauncher_x64.exe">下载 1.2.3</a>
       <a class="ghost-btn large" href="https://github.com/cn0323/Cube-launcher" target="_blank" rel="noopener">GitHub 仓库</a>
@@ -510,6 +550,7 @@
         <span class="f-k">产品</span>
         <a href="#features">功能</a>
         <a href="#ai">AI 助手</a>
+        <a href="#theme">主题对比</a>
         <a href="#film">宣传片</a>
         <a href="#download">下载</a>
         <a href="#changelog">更新日志</a>
