@@ -239,6 +239,12 @@
 
   const FALLBACK = [
     {
+      tag: "v1.2.4",
+      name: "Cube Launcher 1.2.4",
+      date: "2026-11-18",
+      body: "# Cube Launcher 1.2.4\n\n这一版只改了译文，没有动功能。\n\n## 文案\n\n- **英文**：「打开官网更新」的按钮改成 `Update from website`；模型设置的说明不再用 `unlock unlimited questions` 这种广告腔，改成 `Point it at any OpenAI-compatible endpoint and you can ask anything.`；离线模式副标题也去掉 `unlock everything`。\n- **英文细节**：等待上一则回答的提示补成完整句子，`Fill in endpoint, key and model first` 补上冠词，`Partial UI` 改成 `UI preview`。\n- **日文**：「公式サイトの更新を開く」改成「公式サイトから更新」，「一部 UI」改成「UI プレビュー」，引用项目的致谢改成「公開してくださった作者に感謝します」。\n- **繁体中文**：「開啟官網更新」改成「前往官網更新」，和弹窗统一。\n\n## 其它\n\n- 版本号 1.2.4，版本码 1020499，界面和 1.2.3 完全一样。不切英文或日文的话，用起来没有区别。"
+    },
+    {
       tag: "v1.2.3",
       name: "Cube Launcher 1.2.3",
       date: "2026-11-10",
