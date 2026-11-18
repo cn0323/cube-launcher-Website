@@ -221,6 +221,19 @@
     });
   }
 
+  /* ---------------------------- 深浅主题对比滑杆 ---------------------------- */
+  const ba = document.querySelector(".ba");
+
+  if (ba) {
+    const range = ba.querySelector(".ba-range");
+    const setPos = (v) => ba.style.setProperty("--pos", `${v}%`);
+
+    if (range) {
+      setPos(range.value);
+      range.addEventListener("input", () => setPos(range.value));
+    }
+  }
+
   /* ---------------------------- 更新日志（读 Releases） ---------------------------- */
   const logList = document.getElementById("logList");
 
@@ -340,40 +353,57 @@
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   };
 
+  const plainPeek = (raw) => {
+    const text = String(raw || "")
+      .split(/\r?\n/)
+      .map((l) => l.replace(/^[>#\-*+\s]+/, "").replace(/\*\*/g, "").replace(/`/g, ""))
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
+    return text.length > 96 ? `${text.slice(0, 96)}…` : text;
+  };
+
   const renderLogs = (items) => {
     if (!logList) return;
+
     logList.innerHTML = items
-      .map(
-        (it) => `
-      <article class="log-item reveal in">
-        <div class="log-head">
+      .map((it, i) => {
+        const open = i === 0;
+        const body = renderBody(stripDuplicateTitle(it.body, it.tag));
+        return `
+      <article class="log-item reveal in${open ? " is-open" : ""}">
+        <button class="log-head" type="button" aria-expanded="${open}">
           <span class="log-tag">${escapeHtml(it.tag)}</span>
           <span class="log-name">${escapeHtml(it.name || "")}</span>
+          ${open ? '<span class="log-new">最新</span>' : ""}
           <span class="log-date">${escapeHtml(it.date || "")}</span>
-        </div>
-        <div class="log-clip">
-          <div class="log-body">${renderBody(stripDuplicateTitle(it.body, it.tag))}</div>
-        </div>
-        <button class="log-expand" type="button" hidden>
-          <span>展开全文</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          <span class="log-chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="14" height="14"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
+          </span>
         </button>
-      </article>`
-      )
+        <div class="log-peek">${escapeHtml(plainPeek(it.body))}</div>
+        <div class="log-clip">
+          <div class="log-inner">
+            <div class="log-body">${body}</div>
+          </div>
+        </div>
+      </article>`;
+      })
       .join("");
 
-    // 内容过长时折叠，避免一屏被一段日志占满
     logList.querySelectorAll(".log-item").forEach((item) => {
-      const clip = item.querySelector(".log-clip");
-      const btn = item.querySelector(".log-expand");
-      if (!clip || !btn) return;
-      if (clip.scrollHeight <= 470) return;
-
-      btn.hidden = false;
-      btn.addEventListener("click", () => {
-        const open = item.classList.toggle("expanded");
-        btn.querySelector("span").textContent = open ? "收起" : "展开全文";
-        if (!open) item.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      const head = item.querySelector(".log-head");
+      if (!head) return;
+      head.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+        // 手风琴：展开一条时收起其它，免得整页都是日志
+        logList.querySelectorAll(".log-item").forEach((other) => {
+          if (other === item) return;
+          other.classList.remove("is-open");
+          other.querySelector(".log-head")?.setAttribute("aria-expanded", "false");
+        });
+        item.classList.toggle("is-open", willOpen);
+        head.setAttribute("aria-expanded", String(willOpen));
       });
     });
   };
@@ -382,7 +412,7 @@
     if (!logList) return;
     try {
       const res = await fetch(
-        "https://api.github.com/repos/cn0323/Cube-launcher/releases?per_page=3",
+        "https://api.github.com/repos/cn0323/Cube-launcher/releases?per_page=30",
         { headers: { Accept: "application/vnd.github+json" } }
       );
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
